@@ -55,8 +55,28 @@
     {
       "id": 4,
       "name": "Item 1",
-      "description": "This is item Four",
+      "description": "This is item Four222",
       "value": 4
+    },
+    {
+      "name": "New Item",
+      "description": ":)",
+      "value": 0,
+      "error": false,
+      "id": 5
+    },
+    {
+      "name": "yijaa",
+      "description": "YIJAAA",
+      "value": 5,
+      "error": false,
+      "id": 6
+    },
+    {
+      "name": "otro!",
+      "description": ":(",
+      "value": 0,
+      "id": 11
     }
   ]
 }

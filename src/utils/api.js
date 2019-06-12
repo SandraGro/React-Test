@@ -1,5 +1,3 @@
-import { create } from "istanbul-reports";
-
 const API_URL = 'http://localhost:3001';
 
 function parseResponse(response) {
@@ -34,7 +32,44 @@ function getDataWithQuery(queryObject, path) {
     return getData(`${path}${createQuery(queryObject)}`);
 }
 
+function postData(path, data) {
+    return fetch(
+        `${API_URL}/${path}`,
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        }).then(checkResponse).then(parseResponse).catch(handleError);
+}
+
+function patchData(path, id, data) {
+    return fetch(
+        `${API_URL}/${path}/${id}`,
+        {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        }).then(checkResponse).then(parseResponse).catch(handleError);
+}
+
+function deleteData(path, id) {
+    return fetch(
+        `${API_URL}/${path}/${id}`,
+        {
+            method: 'DELETE',
+        });
+}
+
+
+
 export {
     getData,
     getDataWithQuery,
+    postData,
+    patchData,
+    deleteData,
 };
