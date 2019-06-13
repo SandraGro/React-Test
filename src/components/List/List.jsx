@@ -23,7 +23,7 @@ class List extends Component {
         this.updateList();
     }
 
-    updateList(){
+    updateList() {
         getData('items').then((items) => this.setState({ items }));
     }
 
@@ -45,7 +45,7 @@ class List extends Component {
                 key={`item-${i}`}
                 lastClicked={this.state.lastClicked}
                 changeLastClicked={this.changeLastClicked}
-                updateList = {this.updateList}
+                updateList={this.updateList}
                 {...item}
             />
         ));

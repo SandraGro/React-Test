@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // Components
 import UpdateItem from '../UpdateItem/UpdateItem';
-import { deleteData } from '../../../utils/api';
+import {deleteData}  from '../../../utils/api';
 
 class Item extends Component {
     constructor(props) {
