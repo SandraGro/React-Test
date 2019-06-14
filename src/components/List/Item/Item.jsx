@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // Components
 import UpdateItem from '../UpdateItem/UpdateItem';
 import {deleteData}  from '../../../utils/api';
+import {withRouter} from 'react-router-dom'; 
 
 class Item extends Component {
     constructor(props) {
@@ -38,9 +39,10 @@ class Item extends Component {
 
     render() {
         const { id, name, description, value } = this.props;
+        const currentId = this.props.match.params.id;
         return (
             <tr onClick={this.increaseClick}>
-                <td>{id}</td>
+                <td>{currentId === id?'Selected':''}</td>
                 <td>{name}</td>
                 <td>{description}</td>
                 <td>{value}</td>
@@ -54,4 +56,4 @@ class Item extends Component {
     }
 }
 
-export default Item;
+export default withRouter(Item);
